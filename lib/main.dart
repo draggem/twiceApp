@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:practice_burger_app/member_page.dart';
 import 'header.dart';
 import 'categories.dart';
 import 'items_list.dart';
-import 'member_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +17,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: AppBarTheme(color: Colors.teal, centerTitle: true)),
       home: Hamburger(),
-      routes: {MemberPage.tag: (_) => MemberPage()},
       debugShowCheckedModeBanner: false,
     );
   }

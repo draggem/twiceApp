@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice_burger_app/member_page.dart';
 import 'member.dart';
 
 class ItemsList extends StatefulWidget {
@@ -9,16 +10,19 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  EdgeInsets sanaLeft = EdgeInsets.only(left: 70, top: 60);
-  EdgeInsets dahyunLeft = EdgeInsets.only(left: 80, top: 60);
   @override
   Widget build(BuildContext context) {
     List<Member> members = [
-      Member("Sana", "images/sana.png"),
-      Member("Dahyun", "images/dahyun.png"),
-      Member("Momo", "images/momo.png"),
-      Member("Chaeyoung", "images/chae.png"),
-      Member("Nayeon", "images/nayeon.png"),
+      Member("Sana", "images/sana.png",
+          "I used to be a straight A sudent Now im not even straight."),
+      Member("Dahyun", "images/dahyun.png",
+          "Drink lots of water and get enough sleep. Try not to stress. Positive thoughts only!"),
+      Member("Momo", "images/momo.png",
+          "Aren’t you Curious about What’s on a pig’s mind?"),
+      Member("Chaeyoung", "images/chae.png",
+          "Its too cold outside for angels to fly."),
+      Member("Nayeon", "images/nayeon.png",
+          "Look me in the eye; Now tell me what you think of me."),
     ];
 
     return Container(
@@ -40,7 +44,11 @@ class _ItemsListState extends State<ItemsList> {
                     width: 200,
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed("sana_page");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MemberPage(member: members[index])));
                       },
                       child: Card(
                         elevation: 3,
@@ -73,20 +81,6 @@ class _ItemsListState extends State<ItemsList> {
                       ),
                     ),
                   ),
-                  // Positioned(
-                  //   child: GestureDetector(
-                  //     onTap: () {
-                  //       Navigator.of(context).pushNamed("sana_page");
-                  //     },
-                  //     child: Container(
-                  //         margin: reverse ? sanaLeft : dahyunLeft,
-                  //         child: Column(
-                  //           children: [
-
-                  //           ],
-                  //         )),
-                  //   ),
-                  // ),
                 ],
               );
             },

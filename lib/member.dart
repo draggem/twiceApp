@@ -1,9 +1,7 @@
 class Member {
-  String name;
-  String url;
+  final String name;
+  final String url;
+  final String phrase;
 
-  Member(String name, String url) {
-    this.name = name;
-    this.url = url;
-  }
+  Member(this.name, this.url, this.phrase);
 }
